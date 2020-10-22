@@ -1,5 +1,5 @@
 package rentalService;
-
+ 
 import javax.persistence.*;
 
 @Entity
