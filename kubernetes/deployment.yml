@@ -21,14 +21,6 @@ spec:
           image: 496278789073.dkr.ecr.us-west-2.amazonaws.com/skccuser14-schedule2:v1
           ports:
             - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
           livenessProbe:
             httpGet:
               path: '/actuator/health'
