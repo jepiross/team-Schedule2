@@ -1,22 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Schedule
+  name: schedule
   labels:
-    app: Schedule
+    app: schedule
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Schedule
+      app: schedule
   template:
     metadata:
       labels:
-        app: Schedule
+        app: schedule
+      annotations:
+        sidecar.istio.io/inject: "true"
     spec:
       containers:
-        - name: Schedule
-          image: username/Schedule:latest
+        - name: schedule
+          image: 496278789073.dkr.ecr.us-west-2.amazonaws.com/skccuser14-schedule2:v1
           ports:
             - containerPort: 8080
           readinessProbe:
